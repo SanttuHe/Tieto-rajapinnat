@@ -1,0 +1,38 @@
+A.  Employees-tietokannan osastojen nimet
+	SELECT Dept_name
+      ->FROM departments;
+
+b) Mitä nimikkeitä tietokannassa title on
+	SELECT DISTINCT title
+      ->FROM titles;
+
+c) Pienin ja suurin palkka
+
+	SELECT 
+  	MIN(salary) AS min_salary,
+  	MAX(salary) AS max_salary
+	FROM salaries;
+	
+
+d) Keskimääräinen palkka
+
+	SELECT AVG(salary)
+      ->FROM salaries;
+
+e) Työntekijät, joiden sukunimi Facello
+
+	SELECT*
+      ->FROM employees
+      ->WHERE last_name = 'Facello';
+
+f) Kuinka moni syntynyt 1950-luvulla
+
+	SELECT COUNT(*) AS born_in_1950s
+       -> FROM employees
+       -> WHERE birth_date BETWEEN '1950-01-01' AND '1959-12-31';
+
+g) Montako naista ja miestä on employees taulukossa
+
+	SELECT GENDER, COUNT(*) AS count
+      -> FROM employees
+      ->GROUP BY gender;
